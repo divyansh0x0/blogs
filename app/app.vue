@@ -3,7 +3,6 @@
     <main>
         <Navbar/>
         <NuxtPage/>
+        <SiteContent />
     </main>
 </template>
-<script setup lang="ts">
-</script>
