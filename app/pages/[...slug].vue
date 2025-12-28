@@ -11,17 +11,18 @@ if (!page.value) {
 </script>
 
 <template>
-    <main class="content" v-if="page">
-        <SideBar />
-        <ContentRenderer  :value="page.body"/>
+    <main class="content-container" v-if="page">
+        <ContentRenderer class="content" :value="page.body"/>
         <TableOfContent v-if="page.body.toc && page.body.toc.links.length>0" :links="page.body.toc.links"/>
     </main>
 </template>
 <style scoped>
-.content{
+.content-container{
     position: relative;
-    margin-left: 2rem;
     height: 100%;
     width: 100%;
+}
+.content{
+    margin-left: 2rem; /* hardcoded margin based on sidebar edge handle width*/
 }
 </style>

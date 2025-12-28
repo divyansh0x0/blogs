@@ -25,9 +25,9 @@ defineProps<{
             </p>
         </NuxtLink>
         <div role="button" class="folder collapsed" @click="folderClickHandler" v-else>
-            <h3> <ArrowRight class="icon"/> {{ node.name }}</h3>
+            <div style="display: flex; padding-left: var(--padding-md); align-content: center;pointer-events: none; touch-action: none;"> <ArrowRight class="icon"/> <h3> {{ node.name }}</h3></div>
             <ul>
-                <TreeNode
+                <PathTreeNode
                     v-for="child in Object.values(node.children)"
                     :key="child.name"
                     :node="child"
@@ -41,18 +41,29 @@ defineProps<{
 ul {
     list-style: none;
     padding-left: var(--padding-lg);
+    overflow: hidden;
+    border-radius: var(--border-radius-sm);
+    height: fit-content;
 }
 
 li {
+    list-style: none;
+    padding-left: var(--padding-md);
     width: 100%;
-    border-left: 1px solid var(--color-secondary);
+    &:hover{
+        //backdrop-filter: brightness(1.1);
+        background: linear-gradient(to right, transparent,var(--color-overlay-container));
+    }
+    overflow: hidden;
+    background-clip: border-box;
+    border-radius: var(--border-radius-sm);
 }
 
 h3 {
     text-transform:capitalize;
     pointer-events: none;
     align-content: center;
-
+    padding: var(--padding-md);
 }
 
 .file {
@@ -65,6 +76,7 @@ h3 {
 }
 
 .folder {
+    user-select: none;
     text-transform:capitalize;
     cursor: pointer;
 
@@ -72,14 +84,29 @@ h3 {
     height: fit-content;
 
     opacity: 1;
-    background-color: var(--color-overlay-container);
     overflow: hidden;
 
+    background-color: var(--color-secondary-container);
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-speed) ease ;
     .icon{
         transform: rotate(90deg);
         transition: transform var(--transition-speed) ease;
     }
-
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+        background-color: var(--color-secondary);
+        &:nth-child(1){
+            display: none;
+        }
+    }
 }
 .file,.folder{
     transition: max-height var(--transition-speed) ease,
@@ -88,6 +115,7 @@ h3 {
     opacity var(--transition-speed) ease;
 }
 .folder.collapsed {
+    background-color: transparent;
     .icon{
         transform: rotate(0deg);
     }
@@ -100,5 +128,11 @@ h3 {
 }
 p {
     color: var(--color-on-overlay);
+}
+.icon{
+    pointer-events: none;
+    touch-action: none;
+    display: block;
+    align-self: center;
 }
 </style>

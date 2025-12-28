@@ -74,7 +74,7 @@
     }
 
 .light {
-    --color-overlay-container: rgba(255, 255, 255, 0.13);
+    --color-overlay-container: rgba(255, 255, 255, 0.5);
     --color-on-overlay:#000;
     --color-background: rgb(251 248 255);
     color-scheme: light;
