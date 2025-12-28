@@ -20,6 +20,7 @@ const tree = computed(() => {
 const isCollapsed = ref(true);
 </script>
 <template>
+    <div class="backdrop" :class="{show:!isCollapsed}" @click="isCollapsed=true"></div>
     <nav :class="{collapsed:isCollapsed}">
         <h2>Content</h2>
         <div v-if="tree">
@@ -32,6 +33,25 @@ const isCollapsed = ref(true);
 </template>
 
 <style scoped lang="scss">
+.backdrop{
+    position: fixed;
+    z-index: 98;
+    left: 0;
+    top:0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    backdrop-filter: blur(20px);
+    transform: translateX(-100%);
+    transition: opacity var(--transition-speed) ease;
+    &.show{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 nav{
     position: fixed;
     top: 0;
@@ -42,16 +62,21 @@ nav{
     max-width: 80vw;
     transform: translateX(0);
     transition: transform var(--transition-speed) ease;
+    z-index: 99;
 
 }
 .edge-handle{
     position: absolute;
     height: 100px;
+    padding: 0;
     width: fit-content;
-    background-color: var(--color-primary);
+    //background-color: var(--color-primary);
     right: 0;
     top: 50%;
     transform: translate(100%,-50%);
+    backdrop-filter: blur(10px);
+    background-color: var(--color-overlay-container);
+    color: var(--color-on-overlay);
     .icon{
         transform: rotate(180deg);
         transition: transform var(--transition-speed) ease;
@@ -64,5 +89,6 @@ nav.collapsed{
             transform: rotate(0deg);
         }
     }
+
 }
 </style>
