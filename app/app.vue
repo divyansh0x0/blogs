@@ -1,9 +1,9 @@
 <template>
     <NuxtRouteAnnouncer/>
     <main>
-        <Navbar/>
+        <NuxtPage/>
+        <SideBar />
     </main>
-    <NuxtPage/>
 </template>
 <script setup lang="ts">
 </script>

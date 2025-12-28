@@ -21,7 +21,7 @@ const result = computed(() => {
 </script>
 
 <template>
-    <form role="search" class="search" :class="{collapsed:isCollapsed}">
+    <div role="search" class="search" :class="{collapsed:isCollapsed}">
         <input v-model="query" @focusin="()=>isCollapsed = false" @focusout="()=>isCollapsed = true"
                placeholder="search..." type="text">
         <ul class="result-container" v-if="result.length>0">
@@ -41,7 +41,7 @@ const result = computed(() => {
         <div class="result-container" v-else>
             No result found
         </div>
-    </form>
+    </div>
 </template>
 
 <style scoped>
@@ -50,6 +50,8 @@ const result = computed(() => {
     border-radius: var(--border-radius-sm);
     position: relative;
     padding: 0;
+    width: 100%;
+    height: 100%;
 
     &::after {
         content: '';

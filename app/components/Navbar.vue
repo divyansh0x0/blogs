@@ -1,63 +1,49 @@
 <script setup lang="ts">
-import DarkModeIcon from '~icons/material-symbols/dark-mode-outline-rounded';
-import LightModeIcon from '~icons/material-symbols/light-mode-rounded';
+import DarkModeIcon from "~icons/material-symbols/dark-mode-outline-rounded";
+import LightModeIcon from "~icons/material-symbols/light-mode-rounded";
+import SearchBox from "~/components/SearchBox.vue";
 
 const colorMode = useColorMode();
 const isDark = computed({
     get() {
-        return colorMode.value === 'dark'
+        return colorMode.value === "dark";
     },
     set(_isDark) {
-        colorMode.preference = _isDark ? 'dark' : 'light'
+        colorMode.preference = _isDark ? "dark" : "light";
     }
-})
+});
 
-isDark.value = colorMode.value === 'dark';
+isDark.value = colorMode.value === "dark";
 </script>
 
 <template>
-    <nav>
-        <NuxtLink class="logo" href="/">Divyansh Singh</NuxtLink>
-        <div class="right">
-            <ContentSearch class="search-box"/>
-            <button @click="isDark=!isDark">
-                <LightModeIcon v-if="isDark"/>
-                <DarkModeIcon v-else/>
-            </button>
-        </div>
-    </nav>
+    <div class="wrapper">
+        <SearchBox class="search-box"/>
+        <button @click="isDark=!isDark">
+            <LightModeIcon v-if="isDark"/>
+            <DarkModeIcon v-else/>
+        </button>
+
+    </div>
 </template>
 
 <style scoped>
-nav {
-    z-index: 100;
-    width: 100vw;
-    position: sticky;
-    top: 0;
-    background-color: var(--color-overlay-container);
-    display: flex;
-    backdrop-filter: blur(10px);
-    padding: var(--padding-sm);
-    gap: var(--spacing-md);
-    justify-content: space-between;
-    align-content: center;
-}
-.logo{
-    min-width: max-content;
-    font-size: 2em;
-    align-content: center;
-}
-.right{
-    flex: 1;
+.wrapper {
     position: relative;
     display: flex;
-    gap: var(--spacing-md);
-    justify-content: end;
-}
-.search-box{
+    gap: var(--spacing-sm);
     height: 100%;
     width: 100%;
-    max-width: 500px;
-    flex: 1 1 50vw;
+    justify-content: stretch;
+    align-content: stretch;
+}
+.search-box {
+    height: 100%;
+    width: 100%;
+}
+button{
+    height: 100%;
+    padding: 0 var(--padding-md);
+    background-color: var(--color-tertiary);
 }
 </style>

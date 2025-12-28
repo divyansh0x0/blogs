@@ -21,7 +21,7 @@ const isCollapsed = ref(false);
                 <a :href="`#${link.id}`">{{ link.text }}</a>
             </li>
         </ul>
-        <button class="edge-handle" @click="isCollapsed = !isCollapsed">
+        <button class="side-edge-handle" @click="isCollapsed = !isCollapsed">
             <ArrowRight class="icon"/>
         </button>
     </div>
@@ -53,7 +53,7 @@ li{
     }
 }
 
-.edge-handle{
+.side-edge-handle{
     position: absolute;
     height: 100%;
     padding: 0;
@@ -72,7 +72,7 @@ li{
     }
 }
 .toc.collapsed{
-    .edge-handle{
+    .side-edge-handle{
         .icon{
             transform: rotate(180deg);
         }
