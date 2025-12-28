@@ -91,6 +91,7 @@ input {
     width: 100%;
 
     transition: max-height var(--transition-speed) ease;
+    z-index: 1000;
 }
 
 .collapsed {
