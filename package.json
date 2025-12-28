@@ -1,14 +1,16 @@
 {
-  "name": "notes",
+  "name": "blogs",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "serve": "npx serve .output/public"
   },
   "dependencies": {
+    "@nuxt/icon": "^2.1.1",
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/mdc": "^0.19.2",
     "better-sqlite3": "^12.5.0",
@@ -21,7 +23,7 @@
     "shiki": "^3.20.0"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.421",
+    "@iconify-json/ic": "^1.2.4",
     "@nuxt/content": "^3.10.0",
     "sass": "^1.97.1",
     "unplugin-icons": "^22.5.0"

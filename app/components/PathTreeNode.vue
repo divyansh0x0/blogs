@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import ArrowRight from '~icons/material-symbols/keyboard-arrow-right';
 import type {TreeNode} from "@/lib/buildtree";
 
 function folderClickHandler(e: MouseEvent) {
@@ -25,7 +24,7 @@ defineProps<{
             </p>
         </NuxtLink>
         <div role="button" class="folder collapsed" @click="folderClickHandler" v-else>
-            <div style="display: flex; padding-left: var(--padding-md); align-content: center;pointer-events: none; touch-action: none;"> <ArrowRight class="icon"/> <h3> {{ node.name }}</h3></div>
+            <div style="display: flex; padding-left: var(--padding-md); align-content: center;pointer-events: none; touch-action: none;"> <Icon name="ic:outline-keyboard-arrow-right" class="icon"/> <h3> {{ node.name }}</h3></div>
             <ul>
                 <PathTreeNode
                     v-for="child in Object.values(node.children)"
