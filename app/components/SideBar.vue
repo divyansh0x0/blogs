@@ -40,7 +40,7 @@ const isCollapsed = ref(true);
     top:0;
 
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.45);
 
     opacity: 0;
@@ -63,16 +63,15 @@ nav{
     transform: translateX(0);
     transition: transform var(--transition-speed) ease;
     z-index: 99;
-
 }
 .edge-handle{
     position: absolute;
-    height: 100px;
+    height: 100%;
     padding: 0;
-    width: fit-content;
-    //background-color: var(--color-primary);
+    //width: fit-content;
     right: 0;
     top: 50%;
+    width: 2rem;
     transform: translate(100%,-50%);
     backdrop-filter: blur(10px);
     background-color: var(--color-overlay-container);

@@ -2,7 +2,8 @@
     <NuxtRouteAnnouncer/>
     <main>
         <Navbar/>
-        <NuxtPage/>
-        <SiteContent />
     </main>
+    <NuxtPage/>
 </template>
+<script setup lang="ts">
+</script>
