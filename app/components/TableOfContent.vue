@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import ArrowRight from '~icons/material-symbols/keyboard-arrow-right';
 interface ContentLink {
     id: string,
     depth: number,
@@ -22,7 +21,7 @@ const isCollapsed = ref(false);
             </li>
         </ul>
         <button class="side-edge-handle" @click="isCollapsed = !isCollapsed">
-            <ArrowRight class="icon"/>
+            <Icon name="ic:outline-keyboard-double-arrow-right" class="icon"/>
         </button>
     </div>
 </template>

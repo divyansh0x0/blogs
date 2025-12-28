@@ -2,12 +2,16 @@
 export default defineNuxtConfig({
     modules:
         [
-            '@nuxt/content',
-            '@nuxtjs/color-mode',
-            '@nuxtjs/mdc',
-            ['unplugin-icons/nuxt', { /* options */ }]
+          '@nuxt/content',
+          '@nuxtjs/color-mode',
+          '@nuxtjs/mdc',
+          '@nuxt/icon'
         ],
-    devtools: {enabled: true},
+    ssr:false,
+    // devtools: {enabled: true},
+    nitro:{
+        preset:"static",
+    },
     compatibilityDate: '2024-04-03',
     css: [
         'katex/dist/katex.min.css',
@@ -15,6 +19,12 @@ export default defineNuxtConfig({
         './assets/css/theme.css',
         './assets/css/defaults.css'
     ],
+
+    icon:{
+        serverBundle:{
+            collections :['ic']
+        }
+    },
     content: {
 
         build: {
@@ -28,6 +38,19 @@ export default defineNuxtConfig({
                 remarkPlugins: {'remark-math': {}},
                 rehypePlugins: {'rehype-katex': {}},
             }
+        }
+    },
+
+    app:{
+        baseURL: '/blogs/',
+        head:{
+            title: 'Divyansh Singh - Blogs',
+            htmlAttrs: {
+                lang: 'en',
+            },
+            link:[
+                {rel: 'icon', href: '/favicon.ico'},
+            ]
         }
     }
 })

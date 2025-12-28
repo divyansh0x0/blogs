@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {buildFileTree} from "~/lib/buildtree";
 import PathTreeNode from "~/components/PathTreeNode.vue";
-import ArrowRight from '~icons/material-symbols/keyboard-arrow-right';
 const {data: queryResult} = await useAsyncData(
     'navigation',
     () => queryCollection("content").all()
@@ -29,7 +28,7 @@ const isCollapsed = ref(false);
             <PathTreeNode v-for="node in tree.children" :key="node.name" :node="node"/>
         </div>
         <button class="side-edge-handle" @click="isCollapsed = !isCollapsed">
-            <ArrowRight class="icon"/>
+            <Icon name="ic:outline-keyboard-double-arrow-right" class="icon"/>
         </button>
     </nav>
 </template>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import DarkModeIcon from "~icons/material-symbols/dark-mode-outline-rounded";
-import LightModeIcon from "~icons/material-symbols/light-mode-rounded";
 import SearchBox from "~/components/SearchBox.vue";
 
 const colorMode = useColorMode();
@@ -20,8 +18,8 @@ isDark.value = colorMode.value === "dark";
     <div class="wrapper">
         <SearchBox class="search-box"/>
         <button @click="isDark=!isDark">
-            <LightModeIcon v-if="isDark"/>
-            <DarkModeIcon v-else/>
+            <Icon name="ic:baseline-light-mode" v-if="isDark"/>
+            <Icon name="ic:round-dark-mode" v-else/>
         </button>
 
     </div>
