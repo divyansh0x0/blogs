@@ -40,7 +40,6 @@ a{
 button {
     background-color: var(--color-primary);
     border-radius: 0.5em;
-    box-shadow: var(--box-shadow);
     color: var(--color-on-primary);
     cursor: pointer;
     font-size: 1.1em;

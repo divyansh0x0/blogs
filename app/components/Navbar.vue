@@ -30,9 +30,13 @@ isDark.value = colorMode.value === 'dark';
 
 <style scoped>
 nav {
+    z-index: 100;
     width: 100vw;
     position: sticky;
+    top: 0;
+    background-color: var(--color-overlay-container);
     display: flex;
+    backdrop-filter: blur(10px);
     padding: var(--padding-sm);
     gap: var(--spacing-md);
     justify-content: space-between;
