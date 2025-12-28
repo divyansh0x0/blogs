@@ -21,29 +21,31 @@ const result = computed(() => {
 </script>
 
 <template>
-    <search :class="{collapsed:isCollapsed}">
+    <form role="search" class="search" :class="{collapsed:isCollapsed}">
         <input v-model="query" @focusin="()=>isCollapsed = false" @focusout="()=>isCollapsed = true"
                placeholder="search..." type="text">
         <ul class="result-container" v-if="result.length>0">
             <li v-for="link in result" :key="link.item.id">
                 <NuxtLink class="search-result" :to="link.item.id">
-                    <h6>
-                        {{ link.item.title }}
-                    </h6>
-                    <p v-if="link.item.content">
-                        {{ link.item.content.slice(0, 55) }}...
-                    </p>
+                    <div>
+                        <h6>
+                            {{ link.item.title }}
+                        </h6>
+                        <p v-if="link.item.content">
+                            {{ link.item.content.slice(0, 55) }}...
+                        </p>
+                    </div>
                 </NuxtLink>
             </li>
         </ul>
         <div class="result-container" v-else>
             No result found
         </div>
-    </search>
+    </form>
 </template>
 
 <style scoped>
-search {
+.search {
     background-color: var(--color-surface-container-highest);
     border-radius: var(--border-radius-sm);
     position: relative;
@@ -90,9 +92,10 @@ input {
 }
 
 .collapsed {
-    &::after{
+    &::after {
         opacity: 0;
     }
+
     .result-container {
         border: none;
         max-height: 0;

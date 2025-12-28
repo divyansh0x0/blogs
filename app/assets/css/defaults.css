@@ -20,6 +20,19 @@ body, body:fullscreen {
     position: absolute;
     width: 100vw;
 }
+h1,h2,h3,h4,h5,h6{
+    font-weight: bold;
+    color: var(--color-primary);
+}
+h1{
+    font-size: 8rem;
+}
+h2{
+    font-size: 2.5em;
+}
+h3{
+    font-size: 1.8em;
+}
 a{
     color: var(--color-on-surface);
     text-decoration: none;
