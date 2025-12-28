@@ -1,0 +1,29 @@
+{
+  "name": "notes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxtjs/color-mode": "^4.0.0",
+    "@nuxtjs/mdc": "^0.19.2",
+    "better-sqlite3": "^12.5.0",
+    "fuse.js": "^7.1.0",
+    "katex": "^0.16.27",
+    "nuxt": "^4.2.2",
+    "rehype-katex": "^7.0.1",
+    "rehype-mathjax": "^7.1.0",
+    "remark-math": "^6.0.0",
+    "shiki": "^3.20.0"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.421",
+    "@nuxt/content": "^3.10.0",
+    "sass": "^1.97.1",
+    "unplugin-icons": "^22.5.0"
+  }
+}
