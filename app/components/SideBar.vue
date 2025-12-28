@@ -42,7 +42,6 @@ const isCollapsed = ref(false);
 }
 .searchbar{
     flex:0 0 50px;
-    overflow: hidden;
 }
 nav{
     display: flex;
