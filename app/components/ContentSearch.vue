@@ -126,8 +126,14 @@ li {
     border-radius: var(--border-radius-sm);
 
     &:hover {
-        background-color: var(--color-primary);
-        color: var(--color-on-primary);
+        background-color: var(--color-secondary);
+        color: var(--color-on-secondary);
+        h6{
+            color: var(--color-on-secondary);
+        }
+        p{
+            color: var(--color-on-secondary);
+        }
     }
 
     h6 {
