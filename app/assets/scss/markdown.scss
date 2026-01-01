@@ -1,6 +1,129 @@
-.content{
-    padding: var(--padding-md);
-    h1{
+.dark {
+    --color-code-block:#ffffff0c;
+    --color-link: #66aaff;
+    --color-blockquote:#abadc0 ;
+}
 
+.light {
+    --color-code-block:#fff;
+    --color-link: #0066cc;
+    --color-blockquote:#161616 ;
+}
+
+.content {
+    font-size: 1.1rem;
+    padding: var(--padding-lg);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 800;
+
+        a {
+            text-decoration: none !important;
+        }
+    }
+
+    h1 {
+        font-size: 3em;
+        padding: var(--padding-sm) 0;
+        color: var(--color-primary) !important;
+
+        * {
+            color: var(--color-primary) !important;
+        }
+    }
+
+    h2 {
+        font-size: 2em;
+        color: var(--color-secondary) !important;
+        padding: var(--padding-sm) 0;
+
+        * {
+            color: var(--color-secondary) !important;
+        }
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--color-tertiary);
+        padding: var(--padding-sm) 0;
+
+        * {
+            color: var(--color-tertiary) !important;
+        }
+    }
+
+    a {
+        color: var(--color-link);
+        text-decoration: underline;
+    }
+
+    p {
+        padding: var(--padding-sm) 0;
+        line-height: 1.45em;
+    }
+
+    code {
+        // display: block;
+        background-color: var(--color-code-inline);
+        font-family: "JetBrains Mono", monospace;
+        border-radius: 6px;
+        font-weight: lighter;
+        padding: 0.12em;
+    }
+
+    pre {
+        display: block;
+        background-color: var(--color-code-block);
+        font-family: monospace;
+        border-radius: 6px;
+        font-weight: lighter;
+        padding: var(--padding-lg);
+        margin: var(--spacing-md) 0;
+        code {
+            background-color: unset;
+            font-family: unset;
+            border-radius: unset;
+            padding: unset;
+            // list-style:decimal inside;
+            position: relative;
+
+            .line {
+                padding: 0.1em 0;
+                // display: list-item;
+            }
+
+            span {
+                font-family: "JetBrains Mono", monospace;
+            }
+        }
+    }
+
+    ul,
+    ol {
+        padding: 0 var(--padding-lg);
+
+        li {
+            padding: var(--padding-sm) var(--padding-sm);
+        }
+    }
+
+    blockquote {
+        border-left: 4px solid var(--color-primary);
+        margin-left: 0;
+        padding-left: var(--padding-md);
+        color: var(--color-blockquote);
+        font-style: italic;
+        background-color: var(--color-blockquote-bg);
     }
 }
