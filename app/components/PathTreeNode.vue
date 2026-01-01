@@ -37,41 +37,50 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
+    
+li {
+    margin-bottom:var(--spacing-sm);
+    list-style: none;
+    padding-left: var(--padding-md);
+    width: 100%;
+
+    overflow: hidden;
+    background-clip: border-box;
+    border-radius: var(--border-radius-sm);
+}
 ul {
     list-style: none;
-    padding-left: var(--padding-lg);
+    padding-left: var(--padding-sm);
     overflow: hidden;
     border-radius: var(--border-radius-sm);
     height: fit-content;
 }
 
-li {
-    list-style: none;
-    padding-left: var(--padding-md);
-    width: 100%;
-    &:hover{
-        //backdrop-filter: brightness(1.1);
-        background: linear-gradient(to right, transparent,var(--color-overlay-container));
-    }
-    overflow: hidden;
-    background-clip: border-box;
-    border-radius: var(--border-radius-sm);
-}
 
 h3 {
     text-transform:capitalize;
     pointer-events: none;
     align-content: center;
     padding: var(--padding-md);
+    color: var(--color-on-surface-container);
 }
-
+h4{
+    font-size: 1.1em;
+}
 .file {
     display: block;
     padding: var(--padding-md);
     max-height: 100vh;
     height: fit-content;
     opacity: 1;
-    transition: max-height var(--transition-speed) ease,
+    transition: max-height var(--transition-speed) ease;
+    &:hover{
+        //backdrop-filter: brightness(1.1);
+        background: linear-gradient(to right, transparent,var(--color-overlay-container));
+    }
+    &.router-link-exact-active{
+        background: linear-gradient(to right, transparent,var(--color-overlay-container));
+    }
 }
 
 .folder {
@@ -85,7 +94,7 @@ h3 {
     opacity: 1;
     overflow: hidden;
 
-    background-color: var(--color-secondary-container);
+    background-color: var(--color-surface-container-highest);
     border-radius: var(--border-radius-sm);
     transition: background-color var(--transition-speed) ease ;
     .icon{
