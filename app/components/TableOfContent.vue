@@ -13,7 +13,7 @@ const props = defineProps({
 const isCollapsed = ref(false);
 </script>
 <template>
-    <div class="toc" :class="{collapsed:isCollapsed}">
+    <div :class="{collapsed:isCollapsed}">
         <h2>Table of Content</h2>
         <ul v-for="link in props.links" :key="link.id">
             <li>
@@ -27,9 +27,7 @@ const isCollapsed = ref(false);
 </template>
 
 <style scoped>
-.toc {
-    background-color: var(--color-surface-container-highest);
-}
+
 
 ul {
     list-style: none
@@ -37,26 +35,12 @@ ul {
 li{
     padding: var(--padding-md);
 }
-.toc{
-    box-shadow: var(--box-shadow);
-    position: fixed;
-    top:50%;
-    right: 0;
-    transform: translate(0,-50%);
-    transition: transform var(--transition-speed) ease;
-    padding: var(--padding-md);
-    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
-
-    &.collapsed{
-        transform: translate(100%,-50%);
-    }
-}
 
 .side-edge-handle{
     position: absolute;
     height: 100%;
     padding: 0;
-    width: fit-content;
+    width: 3em;
     left: 0;
     top: 50%;
     transform: translate(-100%,-50%);
@@ -69,12 +53,22 @@ li{
         transform: rotate(0deg);
         transition: transform var(--transition-speed) ease;
     }
+    &:hover{
+        .icon{
+            transform: translateX(30%);
+        }
+    }
 }
 .toc.collapsed{
     .side-edge-handle{
         .icon{
             transform: rotate(180deg);
         }
+            &:hover{
+        .icon{
+            transform:rotate(180deg)  translateX(30%) ;
+        }
+    }
     }
 
 }
