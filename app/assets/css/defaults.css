@@ -11,15 +11,11 @@
     transition: background-color var(--transition-speed) linear;
 }
 
-body, body:fullscreen {
+html,body, body:fullscreen {
     overflow-x: hidden;
     background-color: var(--color-surface-container);
     color: var(--color-on-surface);
     min-height: 100vh;
-    /*overflow: hidden;*/
-    /*max-height: 100vh;*/
-    /*max-width: 100vw;*/
-    position: absolute;
     width: 100vw;
 }
 h1,h2,h3,h4,h5,h6{
