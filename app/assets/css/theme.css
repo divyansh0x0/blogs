@@ -30,7 +30,7 @@
 
 .dark {
     --color-code: rgba(255, 255, 255, 0.09);
-    --color-overlay-container: rgba(255, 255, 255, 0.04);
+    --color-overlay-container: rgba(133, 133, 133, 0.322);
     --color-on-container: rgb(255, 255, 255);
     --color-background: rgb(19 19 24);
     color-scheme: dark;

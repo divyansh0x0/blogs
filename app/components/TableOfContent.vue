@@ -28,7 +28,22 @@ const isCollapsed = ref(false);
 
 <style scoped>
 
-
+.toc{
+    background-color: var(--color-surface-container-highest);
+    box-shadow: var(--box-shadow);
+    
+    position: fixed;
+    top:0;
+    right: 0;
+    
+    transition: transform var(--transition-speed) ease;
+    padding: var(--padding-md);
+    
+    border-radius:  var(--border-radius-sm) var(--border-radius-sm) 0 0;
+    &.collapsed{
+        transform: translateY(-100%);
+    }
+}
 ul {
     list-style: none
 }
@@ -37,36 +52,40 @@ li{
 }
 
 .side-edge-handle{
+    height: 2em;
+    width: 100%;
+
     position: absolute;
-    height: 100%;
-    padding: 0;
-    width: 3em;
-    left: 0;
-    top: 50%;
-    transform: translate(-100%,-50%);
-    backdrop-filter: blur(10px);
+    left: 50%;
+    bottom: 0;
+
+    transform: translate(-50%,100%);
+    backdrop-filter: blur(18px);
+   
     background-color: var(--color-overlay-container);
     color: var(--color-on-overlay);
-    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    
+    padding: 0;
+    border-radius:  0 0 var(--border-radius-sm) var(--border-radius-sm);
 
     .icon{
-        transform: rotate(0deg);
+        transform: rotate(-90deg);
         transition: transform var(--transition-speed) ease;
     }
     &:hover{
         .icon{
-            transform: translateX(30%);
+            transform:  rotate(-90deg) translateX(30%);
         }
     }
 }
 .toc.collapsed{
     .side-edge-handle{
         .icon{
-            transform: rotate(180deg);
+            transform: rotate(90deg);
         }
             &:hover{
         .icon{
-            transform:rotate(180deg)  translateX(30%) ;
+            transform:rotate(90deg)  translateX(30%) ;
         }
     }
     }
