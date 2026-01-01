@@ -1,10 +1,12 @@
 .dark {
+    --color-code-inline: rgba(255, 255, 255, 0.09);
     --color-code-block:#ffffff0c;
     --color-link: #66aaff;
     --color-blockquote:#abadc0 ;
 }
 
 .light {
+    --color-code-theme: rgba(0, 0, 0, 0.19);
     --color-code-block:#fff;
     --color-link: #0066cc;
     --color-blockquote:#161616 ;
