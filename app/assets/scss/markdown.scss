@@ -13,6 +13,7 @@
 .content {
     font-size: 1.1rem;
     padding: 4em;
+    width: 100%;
 
     h1,
     h2,
@@ -88,19 +89,20 @@
         font-family: monospace;
         border-radius: 6px;
         font-weight: lighter;
-        padding: var(--padding-lg);
         margin: var(--spacing-md) 0;
+        overflow-x: auto;
+        height: fit-content;
         code {
+            display: block;
+            padding: var(--padding-lg);
             background-color: unset;
             font-family: unset;
             border-radius: unset;
-            padding: unset;
-            // list-style:decimal inside;
             position: relative;
-
+            overflow-x: hidden;
+            width: max-content;
             .line {
                 padding: 0.1em 0;
-                // display: list-item;
             }
 
             span {

@@ -48,7 +48,7 @@ const isCollapsed = ref(false);
     flex: 0 0 50px;
 }
 .nav-container{
-        position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
