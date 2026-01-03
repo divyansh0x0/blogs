@@ -1,8 +1,9 @@
 .dark {
-    --color-code-inline: rgba(255, 255, 255, 0.09);
-    --color-code-block:#ffffff0c;
+    --color-code-inline: oklab(0% 0 0 / 0.345);
+    --color-code-block:oklch(0% 0 0 / 0.33);
     --color-link: #66aaff;
     --color-blockquote:#abadc0 ;
+    --padding-xs:0.1em
 }
 
 .light {
@@ -14,9 +15,17 @@
 
 .content {
     font-size: 1.1rem;
-    padding: 4em;
+    padding: 2rem 4rem;
     width: 100%;
-
+    max-width: 120ch;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    hr{
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-primary);
+        margin: var(--spacing-md) 0;
+    }
     h1,
     h2,
     h3,
@@ -74,6 +83,7 @@
     p {
         padding: var(--padding-sm) 0;
         line-height: 1.45em;
+        font-size: 1rem;
     }
 
     code {
@@ -118,7 +128,7 @@
         padding: 0 var(--padding-lg);
 
         li {
-            padding: var(--padding-sm) var(--padding-sm);
+            padding: var(--padding-xs) var(--padding-sm);
         }
     }
 
@@ -129,5 +139,11 @@
         color: var(--color-blockquote);
         font-style: italic;
         background-color: var(--color-blockquote-bg);
+    }
+}
+
+@media screen and (max-width:740px){
+    .content{
+        padding: 0 1.5rem;
     }
 }
