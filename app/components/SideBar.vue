@@ -62,7 +62,8 @@ nav {
     gap: 1em;
 
     width: fit-content;
-    max-width: 80vw;
+    max-width: 70vw;
+    overflow: hidden;
     height: 100%;
     min-height: 100vh;
 

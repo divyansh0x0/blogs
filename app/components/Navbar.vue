@@ -42,6 +42,6 @@ isDark.value = colorMode.value === "dark";
 button{
     height: 100%;
     padding: 0 var(--padding-md);
-    background-color: var(--color-tertiary);
+    background-color: var(--color-secondary);
 }
 </style>
