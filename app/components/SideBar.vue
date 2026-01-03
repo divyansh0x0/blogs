@@ -67,7 +67,7 @@ nav {
     height: 100%;
     min-height: 100vh;
 
-    padding: var(--padding-sm);
+    padding: var(--padding-lg);
 
 
     transform: translateX(0);
@@ -141,7 +141,9 @@ nav {
 
 .path-tree {
     border-radius: var(--border-radius-sm);
-
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
     >li {
         padding-left: 0;
     }
