@@ -39,9 +39,9 @@ defineProps<{
 <style scoped lang="scss">
     
 li {
-    margin-bottom:var(--spacing-sm);
     list-style: none;
-    padding-left: var(--padding-md);
+    // padding-left: ;
+    padding: 0 0 0 var(--padding-md);
     width: 100%;
 
     overflow: hidden;
@@ -69,7 +69,7 @@ h4{
 }
 .file {
     display: block;
-    padding: var(--padding-md);
+    padding: var(--padding-md) var(--padding-lg);
     max-height: 100vh;
     height: fit-content;
     opacity: 1;
@@ -102,19 +102,19 @@ h4{
         transition: transform var(--transition-speed) ease;
     }
     position: relative;
-    &::before{
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 2px;
-        height: 100%;
-        border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
-        background-color: var(--color-secondary);
-        &:nth-child(1){
-            display: none;
-        }
-    }
+    // &::before{
+    //     content: '';
+    //     position: absolute;
+    //     left: 0;
+    //     top: 0;
+    //     width: 2px;
+    //     height: 100%;
+    //     border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    //     background-color: var(--color-secondary);
+    //     &:nth-child(1){
+    //         display: none;
+    //     }
+    // }
 }
 .file,.folder{
     transition: max-height var(--transition-speed) ease,
