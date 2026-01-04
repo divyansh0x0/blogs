@@ -1,0 +1,107 @@
+* {
+    font-family: "Roboto Light", sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /*outline: none;*/
+
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth !important;
+    transition: background-color var(--transition-speed) linear;
+}
+
+html,body, body:fullscreen {
+    overflow-x: hidden;
+    background-color: var(--color-surface-container);
+    color: var(--color-on-surface);
+    min-height: 100vh;
+    width: 100vw;
+}
+body{
+    padding-left: 2rem; /* hardcoded margin based on sidebar edge handle width*/
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: bold;
+    color: var(--color-primary);
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2.5em;
+}
+h3{
+    font-size: 1.1em;
+}
+a{
+    color: var(--color-on-surface);
+    text-decoration: none;
+}
+button {
+    background-color: var(--color-primary);
+    border-radius: 0.5em;
+    color: var(--color-on-primary);
+    cursor: pointer;
+    font-size: 1.1em;
+    /*transition: background-color 200ms ease-in-out;*/
+    height: fit-content;
+    padding: var(--padding-md);
+    transition: filter var(--transition-speed) linear;
+    width: fit-content;
+}
+
+
+/*button:hover {*/
+/*    filter: brightness(1.2);*/
+/*}*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 1em;
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 1em;
+    background: rgba(255, 255, 255, 0.24);
+    transition: background-color 200ms linear;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+input {
+    outline: none;
+}
+/**
+Layout shift
+
+Web component is not rendered instantly. There could be a few milliseconds delay.
+
+This is caused by:
+
+JavaScript. Web component cannot be rendered until it is loaded and registered.
+Because of web component spec. Rendering is done asynchronously in browser, often causing tiny delay.
+
+This might cause layout shift.
+
+To avoid layout shift, add this to your CSS:
+**/
+iconify-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
