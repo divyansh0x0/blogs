@@ -30,7 +30,6 @@ export default defineNuxtConfig({
 
 
         build: {
-
             markdown: {
                 toc: {
                     depth: 3,
