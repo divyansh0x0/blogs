@@ -9,7 +9,9 @@ A value is
 
 ## Variable
 
-A name assigned to a value is called a variable. The are not to be confused with `identifiers` which can point to both values as well as block of code.
+A name assigned to a value is called a variable. The are not to be confused with `identifiers` which can point to both values as well as block of code, and can have constant values.
+
+Values of variables change.
 
 The format for variable name is generally:
 
@@ -19,3 +21,4 @@ The format for variable name is generally:
 4. Cannot be a reserved keyword of language.
 
 Most languages treat keywords as case-sensitive, i.e. `a` and `A` are treated as two different variables.
+
