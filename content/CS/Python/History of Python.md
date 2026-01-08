@@ -1,14 +1,11 @@
 ---
-title: History of python
 description: A bried history of python
 ---
-
-# History of Python
+# Python
 
 Python was conceived in the late **1980s** by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands.
 
 It was a successor to ABC programming language.
-
 
 The name Python derives from the British comedy series **Monty Python's Flying Circus**.
 
