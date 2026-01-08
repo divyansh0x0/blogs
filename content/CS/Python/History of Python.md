@@ -20,3 +20,10 @@ The name Python derives from the British comedy series **Monty Python's Flying C
 3. `Python 3.0`: It was released in 3 December 2008, and was a major revision and not completely backward compatible with earlier verisions.
 
 > The support for python 2.0 was dropped after 2.7 whose end of life was initially set for 2015 but was postponed to 2020
+
+## What is Python
+
+It is a high level, general purpose language with support for dynamic typing.
+
+It is platform independent, open source and easy to use, with a rich library support.
+
