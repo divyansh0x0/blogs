@@ -16,7 +16,7 @@
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/mdc": "^0.19.2",
     "better-sqlite3": "^12.5.0",
-    "commander": "^14.0.2",
+    "commander": "^13.1.0",
     "fuse.js": "^7.1.0",
     "katex": "^0.16.27",
     "nuxt": "^4.2.2",
