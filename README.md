@@ -1,75 +1,29 @@
-# Nuxt Content Starter
+# Personal Blogs
+The repository contains the source code for all the blogs I have created. They are for my own personal use.
 
-Look at the [Nuxt Content documentation](https://content.nuxt.com) to learn more.
+## Nuxt Content Starter
 
-## Setup
+Learn more in the [Nuxt Content docs](https://content.nuxt.com).
 
-Make sure to install dependencies:
-
+### Install
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+# or pnpm install / yarn install / bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+### Development
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Runs at [http://localhost:3000](http://localhost:3000)
 
-Build the application for production:
+### Production
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+See [deployment docs](https://nuxt.com/docs/getting-started/deployment) for details.
