@@ -2,7 +2,6 @@
 title: The JS Interpreter
 description: Some under the hood working of javascript
 ---
-# The Typescript Typesystem
 ## The primitives
 
 In javascript a primitive is data that is not an object and has no methods or properties. There are 8 primitive data types in JS:

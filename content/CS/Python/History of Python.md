@@ -1,9 +1,7 @@
 ---
 description: A bried history of python
 ---
-# Python
-
-Python was conceived in the late **1980s** by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands.
+**1980s** by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands.
 
 It was a successor to ABC programming language.
 

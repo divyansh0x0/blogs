@@ -3,8 +3,6 @@ title: The Visitor Pattern
 dated: 1 January 2026
 description: A blog on how visiter pattern works
 ---
-# The Vistor Pattern
-
 ## My Journey with the Visitor Pattern
 While building [algo](https://github.com/divyansh0x0/algo), I wanted to create my own domain specific language (DSL). 
 The idea was to allow users to define algorithms in a more human-readable way, while the interpreter handles the tracer generation and execution.
