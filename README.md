@@ -8,7 +8,6 @@ Learn more in the [Nuxt Content docs](https://content.nuxt.com).
 ### Install
 ```bash
 npm install
-# or pnpm install / yarn install / bun install
 ```
 
 ### Development

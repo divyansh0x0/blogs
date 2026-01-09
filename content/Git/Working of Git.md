@@ -2,9 +2,7 @@
 title: What is git
 description: An overview on working of git. Source - progit book
 ---
-# An Overview of Working of Git
-Most VCS store data as a list of file based changes. They store data information as a set of files and the changes made to each file over time. 
-There will be a single version which will signify addition of file, the other versions will only store changes to that file. This is known as 
+, the other versions will only store changes to that file. This is known as 
 **delta-based version control**.
 
 Git does not use this method, instead it takes a *snapshot* of your file system i.e. it stores how your files look when the version was created.

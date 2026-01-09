@@ -3,9 +3,7 @@ title: A short history of GIT
 description: We will go through how git came into existence
 date: 5 January 2025
 ---
-# History of GIT
-
-During the early days of Linux kernel maintenance (1991 - 2002), changes to software was passed around as patches and archived files. Then in 2002, the Linux kernel project began using a proprietary DVCS called BitKeeper.
+(1991 - 2002), changes to software was passed around as patches and archived files. Then in 2002, the Linux kernel project began using a proprietary DVCS called BitKeeper.
 
 But in 2005, the relationship between the community that developed Linux kernel and Bitkeeper broke down and tool's free of charge status was revoked.
 

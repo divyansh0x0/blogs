@@ -3,7 +3,7 @@ title: Why GIT came into existence
 description: A small history of Version Control System (VCS)
 dated: 1 January 2025
 ---
-# Understanding Version Control System (VCS)
+(VCS)
 A version control is the system that record changes to a file or set of files over time. If anything bad happens you can revert back to a previous state for any given file.
 
 VCS can be as simple as making dated folders or zip file of you project. But this is extremely error prone and tedious. local version control systems were developed to store file changes in a local database.
