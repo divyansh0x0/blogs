@@ -11,6 +11,7 @@ if (!page.value) {
 </script>
 
 <template>
+    <H1>{{ page?.title ?? "Untitled"  }}</H1>
     <div class="content-container" v-if="page">
         <ContentRenderer class="content" :value="page.body" />
         <TableOfContent class="toc" v-if="page.body.toc && page.body.toc.links.length > 0" :links="page.body.toc.links" />
@@ -21,5 +22,8 @@ if (!page.value) {
     position: relative;
     height: 100%;
     width: 100%;
+}
+h1{
+    padding:var(--padding-sm) 0 0 var(--padding-lg);
 }
 </style>
