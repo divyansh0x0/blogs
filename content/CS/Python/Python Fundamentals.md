@@ -16,6 +16,7 @@ The following librarie:
 8. `django`
 
 ## Python Functions
+
 Here are some must know things about native python functions and classes.
 1. `range()`, `list()`
 
