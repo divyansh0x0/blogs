@@ -16,10 +16,11 @@ The **model–view–presenter (MVP)** software pattern was created in the early
 
 MVP is a user interface architectural pattern designed to make unit testing easier and to better separate presentation logic.
 
-* The model defines the data used by the user interface.
-* The view displays the data and sends user actions to the presenter.
-* The presenter handles the logic, gets data from the model, and prepares it for display in the view.
-* Services can be added to the presenter to handle additional processing of the model.
+* **Model**: defines the data used by the user interface.
+* **View**: displays the data and sends user actions to the presenter.
+* **Presenter**: handles the logic, gets data from the model, and prepares it for display in the view.
+
+Services can be added to the presenter to handle additional processing of the model.
 
 Typically, the view instantiates the concrete presenter object and passes itself as a reference.
 

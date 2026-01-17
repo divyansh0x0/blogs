@@ -63,8 +63,9 @@ export default defineNuxtConfig({
                 lang: 'en',
             },
             link: [
-                { rel: 'icon', href: '/favicon.ico' },
-            ]
+                { rel: 'icon', href: '/Logo.ico' },
+            ],
+
         }
     }
 })
