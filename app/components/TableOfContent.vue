@@ -15,8 +15,8 @@ const isCollapsed = ref(false);
 <template>
     <div :class="{collapsed:isCollapsed}">
         <h2>Table of Content</h2>
-        <ul v-for="link in props.links" :key="link.id">
-            <li>
+        <ul >
+            <li v-for="link in props.links" :key="link.id">
                 <a :href="`#${link.id}`">{{ link.text }}</a>
             </li>
         </ul>
@@ -32,10 +32,6 @@ const isCollapsed = ref(false);
     background-color: var(--color-surface-container-highest);
     box-shadow: var(--box-shadow);
     
-    position: fixed;
-    top:0;
-    right: 0;
-    
     transition: transform var(--transition-speed) ease;
     padding: var(--padding-md);
     
@@ -45,10 +41,12 @@ const isCollapsed = ref(false);
     }
 }
 ul {
-    list-style: none
+    list-style: decimal;
+    margin-left: var(--spacing-lg);
 }
 li{
-    padding: var(--padding-md);
+    display: list-item;
+    padding: var(--padding-md) 0;
 }
 
 .side-edge-handle{

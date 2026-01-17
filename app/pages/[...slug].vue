@@ -11,21 +11,26 @@ if (!page.value) {
 </script>
 
 <template>
-    <div class="blog-wrapper">
-        <div class="blog" v-if="page">
+    <div class="blog-wrapper" v-if="page">
+        <div class="blog" >
             <H1>{{ page?.title ?? "Untitled" }}</H1>
             <ContentRenderer class="content" :value="page.body" />
-            <TableOfContent class="toc" v-if="page.body.toc && page.body.toc.links.length > 0"
-                :links="page.body.toc.links" />
         </div>
+        <TableOfContent class="toc" v-if="page.body.toc && page.body.toc.links.length > 0"
+                        :links="page.body.toc.links" />
     </div>
 </template>
 <style scoped>
 .blog-wrapper {
+    position: relative;
     width: 100%;
     justify-content: center;
 }
-
+.toc{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
 .blog {
     position: relative;
     height: 100%;
@@ -35,8 +40,10 @@ if (!page.value) {
     transform: translateX(-50%);
 }
 
-h1 {
-    padding: var(--padding-sm) 0 0 var(--padding-lg);
+h1, .content {
+    padding: var(--padding-sm) 0 0 20px;
     /* text-align: center; */
 }
+
+
 </style>

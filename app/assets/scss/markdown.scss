@@ -15,7 +15,6 @@
 
 .content {
     font-size: 1.1rem;
-    padding: 2rem 4rem;
     width: 100%;
     max-width: 120ch;
     margin-left: 50%;
@@ -26,7 +25,9 @@
         background-color: var(--color-primary);
         margin: var(--spacing-md) 0;
     }
-    h1,
+    h1{
+        display: none;
+    }
     h2,
     h3,
     h4,
@@ -139,11 +140,5 @@
         color: var(--color-blockquote);
         font-style: italic;
         background-color: var(--color-blockquote-bg);
-    }
-}
-
-@media screen and (max-width:740px){
-    .content{
-        padding: 0 1.5rem;
     }
 }
