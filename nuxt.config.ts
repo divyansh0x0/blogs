@@ -49,7 +49,10 @@ export default defineNuxtConfig({
                     langs: [
                         'c',
                         'cpp',
-                        'ts'
+                        'ts',
+                        'python',
+                        'java',
+                        'javascript'
                     ]
                 }
             }
