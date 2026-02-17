@@ -37,7 +37,7 @@ export default defineNuxtConfig({
                 },
 
                 remarkPlugins: { 'remark-math': {} },
-                rehypePlugins: { 'rehype-katex': {} },
+                rehypePlugins: { 'rehype-katex': {output:""} },
                 highlight: {
                     theme: {
                         default: 'github-light',

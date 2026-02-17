@@ -83,8 +83,8 @@
 
     p {
         padding: var(--padding-sm) 0;
-        line-height: 1.45em;
-        font-size: 1rem;
+        line-height: 1.5em;
+        font-size: 1.1rem;
     }
 
     code {
@@ -135,7 +135,7 @@
 
     blockquote {
         border-left: 4px solid var(--color-primary);
-        margin-left: 0;
+        margin: var(--spacing-sm) 0 var(--spacing-sm)  0;
         padding-left: var(--padding-md);
         color: var(--color-blockquote);
         font-style: italic;
