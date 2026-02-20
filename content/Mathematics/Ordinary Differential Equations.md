@@ -123,7 +123,9 @@ as the initial conditions.
 Normally, number of initial conditions equal the order of differential equation, however there exists differential equations
 where this will not be true. 
 
-
+> Note: When solving a differential equation it is possible that the modifications you do to the original differential equation
+> leads to an extraneous solution. These solution do not satisfy the original equation. Example $\sqrt{x^2 + 4x -3} = 1-2x$, if you solve this 
+> by squaring both sides you will get $x=2$ and $x=2/3$ as solutions but neither satisfy the original equation, such solutions are **extraneous**.
 ## Geometrical Representation of Solution of Differential Equation
 When we are asked to find $1$-parameter solution of 
 
@@ -136,4 +138,20 @@ $(1)$
 
 The graph of the function satisfying $(1)$ is known as the **integral curve**.
 
+## Differential of a Function of One Independent Variable
+
+For a function $y = f(x)$, the differential $dy$ is defined as
+
+$$
+dy = f'(x)\Delta x = f'(x) dx
+$$
+
+as it depends on both $x$ and $\Delta x$, therefore we define it as
+
+$$
+(dy)(x,\Delta x) = f'(x) \Delta x
+$$
+
+> Note $dx = \Delta x$, but $dy \ne \Delta y$, this can be verified by using the slope/tangent definition of derivatives.
+> $dy$ is change in the tangent line touching at $x$ while $\Delta y$ is the change in function's output.
 
