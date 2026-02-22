@@ -128,7 +128,7 @@ or
 $$
 y = c_1e^{\alpha x} \cos(\beta x -\delta)
 $$
-
+>  If an imaginary pair of roots is repeated $n$ times then $y_c = e^{\alpha x}\left((c_1+c_2x + ...+c_nx^n)\cos(\beta x)+(c_1+c_2x + ...+c_nx^n)\sin(\beta x)\right)$
 ## Finding solution of Non-Homogenous LDE with Constant Coefficients
 
 We already know the complementary function $y_c$ is the general solution for homogenous LDE:
