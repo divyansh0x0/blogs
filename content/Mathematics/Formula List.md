@@ -53,7 +53,7 @@ $$
 $$
 If $P(-a^2) = 0$ then we can use the first non-zero derivative of $P(D)$ which is lets say $P^n(D)$
 $$
-   \frac{1}{P(D)}\sin(ax+b) =  x^n\frac{1}{P^n(a)}\sin(ax+b)
+   \frac{1}{P(D)}\sin(ax+b) =  x^n\frac{1}{P^n(-a^2)}\sin(ax+b)
 $$
 4. For other function the inverse polynomial operator can be broken into partial fractions to avoid subsequent integrals which are complicated.
 > Note: If $\sin(ax)f(x)$ or $\cos(ax)f(x)$ is present in an LDE, you can make use of *exponential shift* because of the **superposition principle**.
