@@ -98,25 +98,68 @@ by inspection.
 |      Polynomial Function      |            $x^{n}, n \gt 0$            |          $\frac{n!}{s^{n+1}}$          | $\text{Re}(s) > \vert\alpha\vert $ |
 
 ## Properties of Laplace Transform
-
+If $\mathcal{L}\{f(t)\} = F(s)$ then
 1. Linearity: 
 $$
 \mathcal{L}\{u+v\}(s) = \mathcal{L}\{u\}(s)+\mathcal{L}\{v\}(s)
 $$
 2. Exponential function cause shift in Laplace Transform: 
 $$
-\mathcal{L}\{e^{at}\cdot f(t)\}(s) = \mathcal{L}\{f\}(s-a) 
+\mathcal{L}\{e^{at}\cdot f(t)\}(s) = F(s-a) 
 $$
 3. Scaling:
 $$
-\mathcal{L}\{f(at)\}(s) = \frac{1}{a}L\{f(t)\}(\frac{s}{a}) 
+\mathcal{L}\{f(at)\}(s) = \frac{1}{a}F\left(\frac{s}{a}\right) 
 $$
-4. Laplace of a derivative of a function is a multiplication of $s$ with the original function
+4.  Laplace of a derivative of a function is a multiplication of $s$ with the original function.
 $$
-\mathcal{L}\{f^n\}=s^n \mathcal{L}\{f(t)\}(s) - s^{n-1}f(0) - s^{n-2}f'(0) - ... - f^{(n-1)}(0);
+\mathcal{L}\{f^n(t)\}=s^n F(s) - s^{n-1}f(0) - s^{n-2}f'(0) - ... - f^{(n-1)}(0);
 $$
+5.  
+$$
+   \mathcal{L}\{tf(t)\} = -F'(s)
+$$
+
+6. 
+$$
+   \mathcal{L}\left\{\frac{f(t)}{t}\right\} = \int_s^\infty {F(\sigma)}d\sigma
+$$
+
+
+
 The reason for subtraction of derivatives at $t=0$ is because this is our initial condition. So in Laplace transform $t=0$ is always an initial condition in IVP
 
+
+## Properties of Inverse Laplace Transform
+1. Linearity: If $\mathcal{L}^{-1}\{F(s)\} = f(t)$ and If $\mathcal{L}^{-1}\{G(s)\} = g(t)$
+$$
+  \mathcal{L}^{-1}\{c_1 F(s) + c_2 G(s)\} = c_1f(t) + c_2g(t) 
+$$
+
+2. Shifting Property: If $\mathcal{L}^{-1}\{F(s)\} = f(t)$
+$$
+   \mathcal{L}^{-1}\{F(s-a)\} = e^{at}f(t)
+$$
+
+3. Scaling Property: If $\mathcal{L}^{-1}\{F(s)\} = f(t)$ and $a>0$
+$$
+   \mathcal{L}^{-1}\{F(as)\} = \frac{1}{a}f \left(\frac{t}{a}\right)
+$$
+
+4. Inverse of Special Integrals: If $\mathcal{L}^{-1}\{F(s)\} = f(t)$
+
+$$
+\mathcal{L}^{-1}\left\{\int_{s}^{\infty}{F(\sigma)d\sigma}\right\} = \frac{f (t) } {t}
+$$
+
+5. Multiplication by s: If $\mathcal{L}^{-1}\{F(s)\} = f(t)$ and $f(0) = 0$
+$$
+   \mathcal{L}^{-1}\{sF(s)\} = f'(t)
+$$
+6. Division by s: If $\mathcal{L}^{-1}\{F(s)\} = f(t)$
+$$
+   \mathcal{L}^{-1}\left\{\frac{F(s)}{s}\right\} = \int_0^t {f(\tau)}d\tau
+$$
 ## Solving LDEs using Laplace Transform
 Laplace transform is good for solving IVPs, otherwise characteristic/auxillary equation methods are easier to get a more general 
 solution.
@@ -135,4 +178,8 @@ L\{y\}(s) = \frac{ L\{Q(x)\}(s) + asy(0) + ay'(0) + by(0)} {as^2 + bs + c}
 $$
 
 Then you can take the inverse Laplace transform to get y(x). The solution you get will be the particular solution for the 
-initial conditions $y(0)$ and $y'(0)$
+initial conditions $y(0)$ and $y'(0)$.
+
+> The inverse Laplace transform is done through inspection by decomposing the transformation into partial fractions.
+
+
