@@ -7,22 +7,23 @@
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth !important;
-    transition: background-color var(--transition-speed) linear;
+    transition: background-color var(--transition-speed) linear, color var(--transition-speed) linear;
 }
 
 html,body, body:fullscreen {
-    font-family: "Roboto Light", sans-serif;
+    font-family: "Lora", serif;
     overflow-x: hidden;
-    background-color: var(--color-surface-container);
-    color: var(--color-on-surface);
+    background-color: var(--color-background);
+    color: var(--color-on-background);
     min-height: 100vh;
     width: 100vw;
 }
 body{
-    padding-left: 2rem; /* hardcoded margin based on sidebar edge handle width*/
+    /* removed hardcoded margin */
 }
 h1,h2,h3,h4,h5,h6{
-    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
     color: var(--color-primary);
 }
 h1{
@@ -39,26 +40,20 @@ a{
     text-decoration: none;
 }
 button {
-    background-color: var(--color-primary);
-    border-radius: 0.5em;
-    color: var(--color-on-primary);
+    background-color: transparent;
+    color: var(--color-on-surface);
     cursor: pointer;
     font-size: 1.1em;
-    /*transition: background-color 200ms ease-in-out;*/
     height: fit-content;
-    padding: var(--padding-md);
-    transition: filter var(--transition-speed) linear;
+    padding: var(--padding-sm);
+    transition: color var(--transition-speed) linear;
     width: fit-content;
 }
 
 
-/*button:hover {*/
-/*    filter: brightness(1.2);*/
-/*}*/
-
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-corner {
@@ -67,20 +62,19 @@ button {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    border-radius: 1em;
     background: transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    border-radius: 1em;
-    background: rgba(255, 255, 255, 0.24);
+    border-radius: 4px;
+    background: var(--color-outline);
     transition: background-color 200ms linear;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.45);
+    background: var(--color-outline-variant);
 }
 
 input {

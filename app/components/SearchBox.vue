@@ -23,7 +23,7 @@ const result = computed(() => {
 <template>
     <div role="search" class="search" :class="{collapsed:isCollapsed}">
         <input v-model="query" @focusin="()=>isCollapsed = false" @focusout="()=>isCollapsed = true"
-               placeholder="search..." type="text">
+               placeholder="Search..." type="text">
         <ul class="result-container" v-if="result.length>0">
             <li v-for="link in result" :key="link.item.id">
                 <NuxtLink class="search-result" :to="link.item.id">
@@ -38,7 +38,7 @@ const result = computed(() => {
                 </NuxtLink>
             </li>
         </ul>
-        <div class="result-container" v-else>
+        <div class="result-container empty-state" v-else-if="!isCollapsed && query">
             No result found
         </div>
     </div>
@@ -46,76 +46,78 @@ const result = computed(() => {
 
 <style scoped>
 .search {
-    background-color: var(--color-surface-container-highest);
-    border-radius: var(--border-radius-sm);
     position: relative;
     padding: 0;
     width: 100%;
     height: 100%;
-
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 1px;
-        width: 100%;
-        background-color: var(--color-primary);
-        opacity: 1;
-        transition: opacity var(--transition-speed) ease;
-    }
+    background-color: transparent;
 }
 
 input {
     width: 100%;
     height: 100%;
-    background-color: var(--color-surface-container-highest);
-    padding: 0 var(--padding-md);
-    border-top-left-radius: var(--border-radius-sm);
-    border-top-right-radius: var(--border-radius-sm);
-    position: relative;
+    background-color: transparent;
+    padding: var(--padding-sm) 0;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-on-surface);
+    border-bottom: 1px solid var(--color-outline);
+    transition: border-color var(--transition-speed) ease;
 
+    &:focus {
+        border-bottom-color: var(--color-primary);
+    }
+    
+    &::placeholder {
+        color: var(--color-on-surface-variant);
+        font-family: "Lora", serif;
+        font-style: italic;
+    }
 }
 
 .result-container {
-    padding: var(--padding-sm);
+    padding: var(--padding-md) 0;
     list-style: none;
-    max-height: 50vh;
-    overflow: auto;
+    max-height: 60vh;
+    overflow-y: auto;
 
+    /* Make it a bigger popup, escaping the sidebar width */
     position: absolute;
-    top: 100%;
-    background-color: var(--color-surface-container-highest);
-    border-bottom-left-radius: var(--border-radius-sm);
-    border-bottom-right-radius: var(--border-radius-sm);
-    width: 100%;
-
-    transition: max-height var(--transition-speed) ease;
+    top: calc(100% + var(--spacing-sm));
+    right: 0;
+    width: 80vw;
+    max-width: 500px;
+    min-width: 300px;
+    background-color: var(--color-surface); 
+    border: 1px solid var(--color-outline);
+    border-radius: var(--border-radius-md);
+    
+    /* Optional: A very subtle shadow to lift it off the reading content */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    
+    transition: max-height var(--transition-speed) ease, opacity var(--transition-speed) ease;
     z-index: 1000;
 }
 
-.collapsed {
-    &::after {
-        opacity: 0;
-    }
+.dark .result-container {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
 
+.collapsed {
     .result-container {
         border: none;
         max-height: 0;
         padding: 0;
         overflow: hidden;
         opacity: 0;
-    }
-
-    input {
-        border-radius: var(--border-radius-sm);
+        box-shadow: none;
     }
 }
 
 li {
     height: fit-content;
     width: 100%;
-    margin-top: var(--spacing-sm);
+    margin: 0;
 }
 
 .search-result {
@@ -125,30 +127,36 @@ li {
     padding: var(--padding-md) var(--padding-lg);
 
     text-decoration: none;
-    font-size: 1em;
-    border-radius: var(--border-radius-sm);
+    font-size: 1.1em; /* Increased base font size for readability */
 
     &:hover {
-        background-color: var(--color-secondary);
-        color: var(--color-on-secondary);
-        h6{
-            color: var(--color-on-secondary);
-        }
-        p{
-            color: var(--color-on-secondary);
-        }
+        background-color: var(--color-surface-variant);
     }
 
     h6 {
-        font-size: 1.1em;
+        font-size: 1.2em; /* Larger title */
         padding: 0;
-        margin: 0;
+        margin: 0 0 var(--spacing-xs) 0;
+        font-weight: 600;
+        color: var(--color-on-surface);
+        font-family: "Playfair Display", serif;
     }
 
     p {
         margin: 0;
+        color: var(--color-on-surface-variant);
+        font-family: "Lora", serif;
+        font-size: 0.95em;
+        line-height: 1.4;
     }
 }
 
-
+.empty-state {
+    padding: var(--padding-lg);
+    color: var(--color-on-surface-variant);
+    font-family: "Lora", serif;
+    font-size: 1.1em;
+    font-style: italic;
+    text-align: center;
+}
 </style>

@@ -17,11 +17,10 @@ isDark.value = colorMode.value === "dark";
 <template>
     <div class="wrapper">
         <SearchBox class="search-box"/>
-        <button @click="isDark=!isDark">
+        <button class="theme-toggle" @click="isDark=!isDark" aria-label="Toggle theme">
             <Icon name="ic:baseline-light-mode" v-if="isDark"/>
             <Icon name="ic:round-dark-mode" v-else/>
         </button>
-
     </div>
 </template>
 
@@ -30,18 +29,28 @@ isDark.value = colorMode.value === "dark";
     position: relative;
     display: flex;
     gap: var(--spacing-sm);
-    height: 100%;
+    align-items: center;
     width: 100%;
-    justify-content: stretch;
-    align-content: stretch;
 }
 .search-box {
-    height: 100%;
-    width: 100%;
+    flex-grow: 1;
 }
-button{
-    height: 100%;
-    padding: 0 var(--padding-md);
-    background-color: var(--color-secondary);
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-sm);
+    background-color: transparent;
+    color: var(--color-on-surface-variant);
+    border-radius: var(--border-radius-circle);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+
+    &:hover {
+        background-color: var(--color-surface-variant);
+        color: var(--color-primary);
+    }
+    
+    /* Make icon slightly larger for better tap target */
+    font-size: 1.2rem;
 }
 </style>
